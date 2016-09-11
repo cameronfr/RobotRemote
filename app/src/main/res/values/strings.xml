@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DroneControl</string>
+    <string name="start_controller">Start</string>
+    <string name="settings">settings</string>
+    <string name="save">save</string>
+
+
+
+</resources>

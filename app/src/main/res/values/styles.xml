@@ -1,0 +1,16 @@
+<resources>
+
+    <color name="blueColor">@color/colorPrimary</color>
+    <color name="greyColor">@color/colorPrimaryDark</color>
+    <color name="redColor">@color/colorAccent</color>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

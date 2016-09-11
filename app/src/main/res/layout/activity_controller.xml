@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cameronfranz.robotremote.ControllerActivity"
+    android:gravity="center_vertical"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:screenOrientation="landscape">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/colorPrimaryDark">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Telemetry Goes Here"
+            android:id="@+id/textView"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:padding="20dp">
+
+            <FrameLayout android:id="@+id/ctrl_leftTouchPad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/blueColor">
+
+                <ImageView android:id="@+id/leftTouchPadMarker"
+                    android:layout_width="30px"
+                    android:layout_height="30px"
+                    android:layout_gravity="center"
+                    android:background="@drawable/dot"
+                    android:adjustViewBounds="true" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_weight="8">
+
+            <Button android:id="@+id/ctrl_btn1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <Button android:id="@+id/ctrl_btn2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <Button android:id="@+id/ctrl_btn3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <Button android:id="@+id/ctrl_btn4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <Button android:id="@+id/ctrl_btn5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <Button android:id="@+id/ctrl_btn6"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:padding="20dp">
+
+            <FrameLayout android:id="@+id/ctrl_rightTouchPad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/blueColor">
+
+                <ImageView android:id="@+id/rightTouchPadMarker"
+                    android:layout_width="30px"
+                    android:layout_height="30px"
+                    android:layout_gravity="center"
+                    android:background="@drawable/dot"
+                    android:adjustViewBounds="true" />
+
+            </FrameLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+</LinearLayout>
