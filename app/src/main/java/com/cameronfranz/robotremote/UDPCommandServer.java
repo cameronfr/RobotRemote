@@ -42,15 +42,15 @@ public class UDPCommandServer implements Runnable {
                 " and port: " + Integer.toString(destinationPort));
         try {
             sendSocket = new DatagramSocket();
-            receiveSocket = new DatagramSocket(destinationPort);
+            //receiveSocket = new DatagramSocket(destinationPort);
             while(!Thread.currentThread().isInterrupted()) {
                 sendCommandPacket(sendSocket,ctrl_state_outgoing.toString());
-                receiveCommandPacket(receiveSocket);
+                //receiveCommandPacket(receiveSocket);
                 Thread.sleep(100);
-                //Log.d("CommandThread",ctrl_state_outgoing.toString());
+                Log.d("CommandThread",ctrl_state_outgoing.toString());
             }
             sendSocket.close();
-            receiveSocket.close();
+            //receiveSocket.close();
         }
         catch (Exception e) {
             e.printStackTrace();
