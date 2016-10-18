@@ -44,12 +44,26 @@
                 android:layout_gravity="center"
                 android:background="@color/blueColor">
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black" />
+
                 <ImageView android:id="@+id/leftTouchPadMarker"
                     android:layout_width="30px"
                     android:layout_height="30px"
                     android:layout_gravity="center"
                     android:background="@drawable/dot"
                     android:adjustViewBounds="true" />
+
+
             </FrameLayout>
         </FrameLayout>
 
@@ -97,12 +111,26 @@
                 android:layout_gravity="center"
                 android:background="@color/blueColor">
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black" />
+
                 <ImageView android:id="@+id/rightTouchPadMarker"
                     android:layout_width="30px"
                     android:layout_height="30px"
                     android:layout_gravity="center"
                     android:background="@drawable/dot"
                     android:adjustViewBounds="true" />
+
+
 
             </FrameLayout>
         </FrameLayout>
