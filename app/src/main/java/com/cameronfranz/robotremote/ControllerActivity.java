@@ -73,12 +73,12 @@ public class ControllerActivity extends AppCompatActivity {
 
             switch (view.getId()) {
                 case R.id.ctrl_leftTouchPad:
-                    ctrl_state_outgoing.put("leftTouchPadX",normalizedXPos);
-                    ctrl_state_outgoing.put("leftTouchPadY",normalizedYPos);
+                    ctrl_state_outgoing.put("'leftTouchPadX'",normalizedXPos);
+                    ctrl_state_outgoing.put("'leftTouchPadY'",normalizedYPos);
                     break;
                 case R.id.ctrl_rightTouchPad:
-                    ctrl_state_outgoing.put("rightTouchPadX",normalizedXPos);
-                    ctrl_state_outgoing.put("rightTouchPadY",normalizedYPos);
+                    ctrl_state_outgoing.put("'rightTouchPadX'",normalizedXPos);
+                    ctrl_state_outgoing.put("'rightTouchPadY'",normalizedYPos);
                     break;
 
             }
@@ -100,22 +100,22 @@ public class ControllerActivity extends AppCompatActivity {
 
             switch (view.getId()) {
                 case R.id.ctrl_btn1:
-                    ctrl_state_outgoing.put("btn1",btnVal);
+                    ctrl_state_outgoing.put("'btn1'",btnVal);
                     break;
                 case R.id.ctrl_btn2:
-                    ctrl_state_outgoing.put("btn2",btnVal);
+                    ctrl_state_outgoing.put("'btn2'",btnVal);
                     break;
                 case R.id.ctrl_btn3:
-                    ctrl_state_outgoing.put("btn3",btnVal);
+                    ctrl_state_outgoing.put("'btn3'",btnVal);
                     break;
                 case R.id.ctrl_btn4:
-                    ctrl_state_outgoing.put("btn4",btnVal);
+                    ctrl_state_outgoing.put("'btn4'",btnVal);
                     break;
                 case R.id.ctrl_btn5:
-                    ctrl_state_outgoing.put("btn5",btnVal);
+                    ctrl_state_outgoing.put("'btn5'",btnVal);
                     break;
                 case R.id.ctrl_btn6:
-                    ctrl_state_outgoing.put("btn6",btnVal);
+                    ctrl_state_outgoing.put("'btn6'",btnVal);
                     break;
             }
 
@@ -128,16 +128,16 @@ public class ControllerActivity extends AppCompatActivity {
 
 
     public void initializeDefaultState() {
-        ctrl_state_outgoing.put("leftTouchPadX",0);
-        ctrl_state_outgoing.put("leftTouchPadY",0);
-        ctrl_state_outgoing.put("rightTouchPadX",0);
-        ctrl_state_outgoing.put("rightTouchPadY",0);
-        ctrl_state_outgoing.put("btn1",0);
-        ctrl_state_outgoing.put("btn2",0);
-        ctrl_state_outgoing.put("btn3",0);
-        ctrl_state_outgoing.put("btn4",0);
-        ctrl_state_outgoing.put("btn5",0);
-        ctrl_state_outgoing.put("btn6",0);
+        ctrl_state_outgoing.put("'leftTouchPadX'",0);
+        ctrl_state_outgoing.put("'leftTouchPadY'",0);
+        ctrl_state_outgoing.put("'rightTouchPadX'",0);
+        ctrl_state_outgoing.put("'rightTouchPadY'",0);
+        ctrl_state_outgoing.put("'btn1'",0);
+        ctrl_state_outgoing.put("'btn2'",0);
+        ctrl_state_outgoing.put("'btn3'",0);
+        ctrl_state_outgoing.put("'btn4'",0);
+        ctrl_state_outgoing.put("'btn5'",0);
+        ctrl_state_outgoing.put("'btn6'",0);
 
     }
 
@@ -146,16 +146,16 @@ public class ControllerActivity extends AppCompatActivity {
     public void updateTouchPadMarkers() {
         View lPad = findViewById(R.id.ctrl_leftTouchPad);
         View lMarker = findViewById(R.id.leftTouchPadMarker);
-        lMarker.setX(lPad.getWidth() * ctrl_state_outgoing.get("leftTouchPadX")
+        lMarker.setX(lPad.getWidth() * ctrl_state_outgoing.get("'leftTouchPadX'")
                 /(TOUCHPAD_RANGE*2) + lPad.getWidth()/2 - lMarker.getWidth()/2);
-        lMarker.setY(lPad.getHeight() * -ctrl_state_outgoing.get("leftTouchPadY")
+        lMarker.setY(lPad.getHeight() * -ctrl_state_outgoing.get("'leftTouchPadY'")
                 /(TOUCHPAD_RANGE*2) + lPad.getHeight()/2 - lMarker.getHeight()/2);
 
         View rPad = findViewById(R.id.ctrl_rightTouchPad);
         View rMarker = findViewById(R.id.rightTouchPadMarker);
-        rMarker.setX(ctrl_state_outgoing.get("rightTouchPadX")*rPad.getWidth()
+        rMarker.setX(ctrl_state_outgoing.get("'rightTouchPadX'")*rPad.getWidth()
                 /(TOUCHPAD_RANGE*2) + rPad.getWidth()/2 - rMarker.getWidth()/2);
-        rMarker.setY(-ctrl_state_outgoing.get("rightTouchPadY")*rPad.getHeight()
+        rMarker.setY(-ctrl_state_outgoing.get("'rightTouchPadY'")*rPad.getHeight()
                 /(TOUCHPAD_RANGE*2) + rPad.getHeight()/2 - rMarker.getHeight()/2);
 
 

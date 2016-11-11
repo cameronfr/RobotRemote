@@ -44,10 +44,11 @@ public class UDPCommandServer implements Runnable {
             sendSocket = new DatagramSocket();
             //receiveSocket = new DatagramSocket(destinationPort);
             while(!Thread.currentThread().isInterrupted()) {
-                sendCommandPacket(sendSocket,ctrl_state_outgoing.toString());
+                String stringOut = ctrl_state_outgoing.toString().replace("=",":");
+                sendCommandPacket(sendSocket,stringOut);
                 //receiveCommandPacket(receiveSocket);
                 Thread.sleep(100);
-                Log.d("CommandThread",ctrl_state_outgoing.toString());
+                Log.d("CommandThread",stringOut);
             }
             sendSocket.close();
             //receiveSocket.close();
