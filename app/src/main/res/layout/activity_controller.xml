@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Telemetry Goes Here"
+            android:text="No Telemetry Data"
             android:id="@+id/telemetryText"
             android:layout_gravity="center"
             android:gravity="center"/>
@@ -31,13 +31,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:padding="20dp">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="6"
-            android:padding="20dp">
+            android:layout_weight="6">
 
             <FrameLayout android:id="@+id/ctrl_leftTouchPad"
                 android:layout_width="match_parent"
@@ -73,38 +73,48 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical|center_horizontal"
-            android:layout_weight="8">
+            android:layout_weight="7.5"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            >
+
 
             <Button android:id="@+id/ctrl_btn1"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="0px"
+                android:layout_weight="0.166"/>
 
             <Button android:id="@+id/ctrl_btn2"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="0px"
+                android:layout_weight="0.166"/>
 
             <Button android:id="@+id/ctrl_btn3"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="0px"
+                android:layout_weight="0.166"/>
 
-            <Button android:id="@+id/ctrl_btn4"
+            <ToggleButton android:id="@+id/ctrl_btn4"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="0px"
+                android:layout_weight="0.166"/>
 
-            <Button android:id="@+id/ctrl_btn5"
+            <ToggleButton android:id="@+id/ctrl_btn5"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="0px"
+                android:layout_weight="0.166"/>
 
-            <Button android:id="@+id/ctrl_btn6"
+            <ToggleButton android:id="@+id/ctrl_btn6"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="0px"
+                android:layout_weight="0.166"/>
         </LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="6"
-            android:padding="20dp">
+            >
 
             <FrameLayout android:id="@+id/ctrl_rightTouchPad"
                 android:layout_width="match_parent"
