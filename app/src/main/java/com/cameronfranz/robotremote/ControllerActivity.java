@@ -1,6 +1,8 @@
 package com.cameronfranz.robotremote;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
@@ -11,9 +13,11 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import org.w3c.dom.Text;
 
@@ -77,12 +81,12 @@ public class ControllerActivity extends AppCompatActivity {
         FrameLayout ctrl_rightTouchPad = (FrameLayout) findViewById(R.id.ctrl_rightTouchPad);
         ctrl_leftTouchPad.setOnTouchListener(touchPadHandler);
         ctrl_rightTouchPad.setOnTouchListener(touchPadHandler);
-        findViewById(R.id.ctrl_btn1).setOnTouchListener(buttonsHandler);
-        findViewById(R.id.ctrl_btn2).setOnTouchListener(buttonsHandler);
-        findViewById(R.id.ctrl_btn3).setOnTouchListener(buttonsHandler);
-        findViewById(R.id.ctrl_btn4).setOnTouchListener(buttonsHandler);
-        findViewById(R.id.ctrl_btn5).setOnTouchListener(buttonsHandler);
-        findViewById(R.id.ctrl_btn6).setOnTouchListener(buttonsHandler);
+        findViewById(R.id.ctrl_btn1).setOnTouchListener(tapButtonsHandler);
+        findViewById(R.id.ctrl_btn2).setOnTouchListener(tapButtonsHandler);
+        findViewById(R.id.ctrl_btn3).setOnTouchListener(tapButtonsHandler);
+        findViewById(R.id.ctrl_btn4).setOnTouchListener(tglButtonsHandler);
+        findViewById(R.id.ctrl_btn5).setOnTouchListener(tglButtonsHandler);
+        findViewById(R.id.ctrl_btn6).setOnTouchListener(tglButtonsHandler);
 
     }
     private View.OnTouchListener touchPadHandler = new View.OnTouchListener(){
@@ -112,12 +116,11 @@ public class ControllerActivity extends AppCompatActivity {
 
             }
             updateTouchPadMarkers();
-
             return true;
         }
     };
 
-    private View.OnTouchListener buttonsHandler = new View.OnTouchListener(){
+    private View.OnTouchListener tapButtonsHandler = new View.OnTouchListener(){
         public boolean onTouch(View view, MotionEvent event) {
             int btnVal;
             if (event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE) {
@@ -129,14 +132,28 @@ public class ControllerActivity extends AppCompatActivity {
 
             switch (view.getId()) {
                 case R.id.ctrl_btn1:
-                    ctrlStateOutgoing.put("'btn1'",btnVal);
+                    ctrlStateOutgoing.put("'btn1'", btnVal);
                     break;
                 case R.id.ctrl_btn2:
-                    ctrlStateOutgoing.put("'btn2'",btnVal);
+                    ctrlStateOutgoing.put("'btn2'", btnVal);
                     break;
                 case R.id.ctrl_btn3:
-                    ctrlStateOutgoing.put("'btn3'",btnVal);
+                    ctrlStateOutgoing.put("'btn3'", btnVal);
                     break;
+            }
+
+            //Log.d("Touch",Integer.toString(ctrl_state_outgoing.get("btn1")));
+
+            return false;
+        }
+    };
+
+    private View.OnTouchListener tglButtonsHandler = new View.OnTouchListener(){
+        public boolean onTouch(View view, MotionEvent event) {
+            //Opposite, because the event is triggered before the button changes state
+            int btnVal = !((ToggleButton)view).isChecked() ? 1 : 0;
+
+            switch (view.getId()) {
                 case R.id.ctrl_btn4:
                     ctrlStateOutgoing.put("'btn4'",btnVal);
                     break;
@@ -148,13 +165,9 @@ public class ControllerActivity extends AppCompatActivity {
                     break;
             }
 
-            //Log.d("Touch",Integer.toString(ctrl_state_outgoing.get("btn1")));
-
             return false;
         }
     };
-
-
 
     public void initializeDefaultState() {
         ctrlStateOutgoing.put("'leftTouchPadX'",0);
@@ -212,6 +225,20 @@ public class ControllerActivity extends AppCompatActivity {
         super.onDestroy();
         sendThread.interrupt();
         receiveThread.interrupt();
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit the controller?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 
     public int limitRange(int n, int min, int max) {
