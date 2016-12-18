@@ -43,7 +43,7 @@ public class ControllerActivity extends AppCompatActivity {
         SharedPreferences spref = PreferenceManager.getDefaultSharedPreferences(this);
         String controller_ip = spref.getString("controller_ip","192.168.1.1");
         int sendPort = spref.getInt("controller_send_port",8111);
-        int recievePort = spref.getInt("controller_recieve_port",8112);
+        int recievePort = spref.getInt("controller_receive_port",8112);
         int updateRate = spref.getInt("controller_update_rate",60);
 
 
