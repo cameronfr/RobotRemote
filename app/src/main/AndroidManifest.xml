@@ -17,10 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.cameronfranz.robotremote.ControllerActivity"
-            android:screenOrientation="landscape"></activity>
+        <activity android:name="com.cameronfranz.robotremote.ControllerActivity"></activity>
         <activity android:name="com.cameronfranz.robotremote.SettingsActivity"></activity>
+        <activity android:name="com.cameronfranz.robotremote.HelpActivity"></activity>
+
     </application>
 
 </manifest>
