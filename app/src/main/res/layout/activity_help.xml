@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="landscape"
+    android:background="@color/backgroundPrimary"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:gravity="center">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/darkPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:text = "@string/help_1"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@color/lightPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:text = "@string/help_2"
+                />
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/darkPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:text = "@string/help_3"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@color/lightPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:text = "@string/help_4"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/darkPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:text = "@string/help_5"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@color/lightPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:text = "@string/help_6"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@color/darkPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:text = "@string/help_7"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/lightPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:autoLink="web"
+                android:text = "@string/help_8"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@color/darkPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:text = "@string/help_9"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/lightPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:autoLink="web"
+                android:text = "@string/help_10"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/darkPrimary">
+
+            <TextView
+                style ="@style/HelpTextView"
+                android:autoLink="web"
+                android:text = "@string/help_11"
+                />
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+    </ScrollView>
