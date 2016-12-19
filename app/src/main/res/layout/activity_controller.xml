@@ -7,20 +7,21 @@
     android:gravity="center_vertical"
     android:weightSum="1"
     android:orientation="vertical"
-    android:screenOrientation="landscape">
+    android:screenOrientation="landscape"
+    android:background="@color/backgroundPrimary">
 
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/darkPrimary">
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="No Telemetry Data"
+            android:text="@string/controller_no_telemetry"
             android:id="@+id/telemetryText"
             android:layout_gravity="center"
             android:gravity="center"/>
@@ -43,19 +44,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="@color/blueColor">
+                android:background="@color/lightPrimary">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_gravity="center"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/white" />
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/white" />
 
                 <ImageView android:id="@+id/leftTouchPadMarker"
                     android:layout_width="30px"
@@ -120,19 +121,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="@color/blueColor">
+                android:background="@color/lightPrimary">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_gravity="center"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/white" />
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:background="@android:color/black" />
+                    android:background="@android:color/white" />
 
                 <ImageView android:id="@+id/rightTouchPadMarker"
                     android:layout_width="30px"

@@ -1,16 +1,52 @@
 <resources>
 
-    <color name="blueColor">@color/colorPrimary</color>
-    <color name="greyColor">@color/colorPrimaryDark</color>
-    <color name="redColor">@color/colorAccent</color>
-
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="colorButtonNormal">@color/buttonPrimary</item>
+        <item name="android:buttonStyle">@style/buttonStyle</item>
+        <item name="android:popupBackground">@color/lightPrimary</item>
+        <item name="android:alertDialogTheme">@style/AlertDialog</item>
+        <item name="android:windowBackground">@color/backgroundPrimary</item>
     </style>
+
+    <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@color/buttonPrimary</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="buttonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+
+    <style name="SettingsTextView">
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:paddingLeft">10px</item>
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:background">@color/lightPrimary</item>
+    </style>
+
+    <style name="SettingsTextField">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_weight">0.4</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:background">@color/darkPrimary</item>
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
+    <style name="HelpTextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 
 </resources>

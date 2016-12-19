@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
@@ -42,6 +43,7 @@ public class ControllerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ctrlStateOutgoing = new HashMap<String,Integer>();
         setContentView(R.layout.activity_controller);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         initializeDefaultState();
 
         SharedPreferences spref = PreferenceManager.getDefaultSharedPreferences(this);

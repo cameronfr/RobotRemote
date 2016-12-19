@@ -1,9 +1,29 @@
 <resources>
     <string name="app_name">DroneControl</string>
-    <string name="start_controller">Start</string>
-    <string name="settings">settings</string>
-    <string name="save">save</string>
+    <string name="main_start_controller">controller</string>
+    <string name="main_settings">settings</string>
+    <string name="main_help">help</string>
 
+    <string name="controller_no_telemetry">No Telemetry Data</string>
+
+    <string name="settings_save">save</string>
+    <string name="settings_send_ip">Destination IP</string>
+    <string name="settings_send_port">Destination Port</string>
+    <string name="settings_receive_port">Receive Port</string>
+    <string name="settings_update_freq">Send Frequency</string>
+
+
+    <string name="help_1">This app sends information from the controller — joystick positions and button states — to a device over WIFI using the UDP protocol.</string>
+    <string name="help_2">[Destination IP] and [Send Port] in settings represent the address (IP and Port #) to which the controller packets should be sent.</string>
+    <string name="help_3">The packets once decoded to text by the receiving device are as follows, where the numbers are of course dynamic:</string>
+    <string name="help_4">{\'btn6\':0, \'btn1\':0, \'rightTouchPadX\':100, \'btn5\':0, \'rightTouchPadY\':-100, \'btn2\':0, \'leftTouchPadY\':100, \'btn4\':1, \'btn3\':0, \'leftTouchPadX\':-100}</string>
+    <string name="help_5">This is the text equivalent of a Python dictionary, and can be converted with ast.literal_eval in Python, and regex in other languages.</string>
+    <string name="help_6">Button values (btn&#8230;) are 0 when off and 1 when on. Touchpad values (&#8230;TouchPad&#8230;) range from -100 to 100 in each dimension. The last three buttons are toggles.</string>
+    <string name="help_7">Telemetry can also be displayed in the top portion of the controller view. The app will scale the text size to fit in all the telemetry data.</string>
+    <string name="help_8">[Receive Port] is the port on which this phone will be listening for telemetry data in the form of UDP packets.</string>
+    <string name="help_9">Telemetry info will update as fast as it is received. The frequency at which the controller packets are sent is also configurable:</string>
+    <string name="help_10">[Update Frequency] is the frequency, in hz, at which the UDP packets should be sent.</string>
+    <string name="help_11">This app is open source! See github.com/cameronfr/RobotRemote for examples and code. Please rate and leave feedback; I will get back to you as soon as possible if you\'re having any issues.</string>
 
 
 </resources>
