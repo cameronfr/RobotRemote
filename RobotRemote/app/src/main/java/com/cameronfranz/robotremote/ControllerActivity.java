@@ -53,18 +53,10 @@ public class ControllerActivity extends AppCompatActivity {
         int updateRate = spref.getInt("controller_update_rate",60);
 
 
-        try {
-            sendServer = new UDPSendServer(ctrlStateOutgoing);
-            sendServer.setDestination(controller_ip, sendPort);
-            sendServer.setUpdateRate(updateRate);
-        }
-        catch (UnknownHostException e) {
-            Context context = getApplicationContext();
-            CharSequence text = "Error: Unknown Host!";
-            int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
-        }
+        sendServer = new UDPSendServer(ctrlStateOutgoing);
+        sendServer.setDestination(controller_ip, sendPort);
+        sendServer.setUpdateRate(updateRate);
+
         receiveServer = new UDPReceiveServer(new UDPReceiveServer.RecievedMessageListener() {
             @Override
             public void onRecieveMessage(String message) {

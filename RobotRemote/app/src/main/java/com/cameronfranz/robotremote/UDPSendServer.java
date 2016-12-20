@@ -19,7 +19,7 @@ import android.content.Context;
 public class UDPSendServer implements Runnable {
 
     private Map<String,Integer> ctrl_state_outgoing;
-    private InetAddress destinationIP;
+    private String destinationIP;
     private int destinationPort;
     private int updateRate;
 
@@ -28,8 +28,8 @@ public class UDPSendServer implements Runnable {
         ctrl_state_outgoing = outgoingMap;
     }
 
-    public void setDestination(String ip,int port) throws UnknownHostException {
-        destinationIP = InetAddress.getByName(ip);
+    public void setDestination(String ip,int port) {
+        destinationIP = ip;
         destinationPort = port;
     }
 
@@ -47,6 +47,10 @@ public class UDPSendServer implements Runnable {
                 try {
                     String stringOut = ctrl_state_outgoing.toString().replace("=", ":");
                     sendCommandPacket(sendSocket, stringOut);
+                }
+                catch (UnknownHostException e) {
+                    Log.d("CommandServer","Invalid destination IP");
+                    e.printStackTrace();
                 }
                 catch (IOException e) {
                     Log.d("CommandServer","Error sending packet");
@@ -68,9 +72,9 @@ public class UDPSendServer implements Runnable {
         }
     }
 
-    private void sendCommandPacket (DatagramSocket socket, String message) throws IOException{
+    private void sendCommandPacket (DatagramSocket socket, String message) throws IOException, UnknownHostException{
         byte[] sendData = message.getBytes();
-        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length,destinationIP,destinationPort);
+        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length,InetAddress.getByName(destinationIP),destinationPort);
         socket.send(sendPacket);
         //Log.d("CommandThread","Sent message: " + stringOut);
     }
