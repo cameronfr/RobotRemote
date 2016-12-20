@@ -10,16 +10,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.cameronfranz.robotremote.MainActivity">
+        <activity android:name="com.cameronfranz.robotremote.MainActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cameronfranz.robotremote.ControllerActivity"></activity>
-        <activity android:name="com.cameronfranz.robotremote.SettingsActivity"></activity>
-        <activity android:name="com.cameronfranz.robotremote.HelpActivity"></activity>
+        <activity android:name="com.cameronfranz.robotremote.ControllerActivity"
+            android:screenOrientation="landscape"
+            ></activity>
+        <activity android:name="com.cameronfranz.robotremote.SettingsActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name="com.cameronfranz.robotremote.HelpActivity"
+            android:screenOrientation="landscape"></activity>
 
     </application>
 

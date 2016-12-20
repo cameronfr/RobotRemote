@@ -17,8 +17,6 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
 
         EditText ipAddress = (EditText) findViewById(R.id.settingsIP);
         EditText sendPort = (EditText) findViewById(R.id.settingsSendPort);

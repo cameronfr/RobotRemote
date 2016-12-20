@@ -72,7 +72,7 @@ public class UDPSendServer implements Runnable {
         }
     }
 
-    private void sendCommandPacket (DatagramSocket socket, String message) throws IOException, UnknownHostException{
+    private void sendCommandPacket (DatagramSocket socket, String message) throws IOException {
         byte[] sendData = message.getBytes();
         DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length,InetAddress.getByName(destinationIP),destinationPort);
         socket.send(sendPacket);

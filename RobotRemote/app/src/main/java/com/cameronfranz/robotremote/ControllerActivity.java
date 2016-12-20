@@ -40,10 +40,10 @@ public class ControllerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("CommandServer","oncreate called");
         super.onCreate(savedInstanceState);
         ctrlStateOutgoing = new HashMap<String,Integer>();
         setContentView(R.layout.activity_controller);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         initializeDefaultState();
 
         SharedPreferences spref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -217,8 +217,12 @@ public class ControllerActivity extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.d("CommandServer","Activity destroyed, killing servers...");
         sendThread.interrupt();
         receiveThread.interrupt();
+        while (sendThread.isAlive() || receiveThread.isAlive()) {
+
+        }
     }
 
     @Override
