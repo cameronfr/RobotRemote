@@ -29,7 +29,7 @@ class ControllerServer:
         while(not self._stop.isSet()):
                 try:
                     message, address = sock.recvfrom(1024)
-                    print("Updating controller satte: " + str(message))
+                    print("Updating controller state: " + str(message))
                     try:
                         self.controller_state.update(ast.literal_eval(message.decode()))
                     except (SyntaxError,ValueError):
