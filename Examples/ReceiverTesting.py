@@ -55,9 +55,9 @@ if __name__ == "__main__":
 
         while True:
             time.sleep(1)
-   except ValueError:
+    except ValueError:    
         print("Invalid port input, exiting...")
-   except KeyboardInterrupt:
+    except KeyboardInterrupt:   
         print("Shutting down server...")
         server.stop_server()
 
