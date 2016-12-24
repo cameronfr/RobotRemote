@@ -1,10 +1,12 @@
+![app screenshot](https://raw.githubusercontent.com/cameronfr/RobotRemote/master/Media/Controller%20Blank.png)
+
 [Google Play Link]()
 
 ##App Description##
 
 - Robot controller is a remote control for UDP enabled electronics, sending packets over WiFi. 
 - There are two joysticks, three normal buttons, and three toggle buttons.
-- The address and port to send to can be configured.  The rate to send packets can also be configured.
+- The address and port to send to can be configured.  The rate at which to send packets can also be configured.
 - This app also supports telemetry! Any UDP packets sent to this device’s address and specified port will be displayed above the controller.
 - Packets are in the form of the text representation of a dictionary. See the help screen for more info.
 - This app has been tested with a Raspberry Pi as a receiver, but it should work with other UDP-enabled devices, such as a WiFi enabled Arduino or an ESP8266.
@@ -19,6 +21,6 @@ In Python, the received message can simply be evaluated to a dict with `ast.lite
 
 ##Usage##
 
-See the Examples folder. `ReceiverTesting.py` is an example of how to receive the UDP packets. `TelemetryTesting` is an example of how to send telemetry back to the controller. Simply run `cd Examples` and `python ReceiverTesting.py` or `python TelemetryTesting.py` — there is a dialog that asks for ports and addresses.
+See the Examples folder. `ReceiverTesting.py` is an example of how to receive the UDP packets. `TelemetryTesting.py` is an example of how to send telemetry back to the controller. Simply run `cd Examples` and `python ReceiverTesting.py` or `python TelemetryTesting.py` — there is a dialog that asks for ports and addresses.
 
  
