@@ -1,6 +1,6 @@
 ![app screenshot](https://raw.githubusercontent.com/cameronfr/RobotRemote/master/Media/Controller%20Blank.png)
 
-[Google Play Link]()
+[Google Play Link](https://play.google.com/store/apps/details?id=com.cameronfranz.dronecontrol)
 
 ##App Description##
 
