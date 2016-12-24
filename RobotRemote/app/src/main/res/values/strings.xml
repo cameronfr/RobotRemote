@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DroneControl</string>
+    <string name="app_name">Robot Controller</string>
     <string name="main_start_controller">controller</string>
     <string name="main_settings">settings</string>
     <string name="main_help">help</string>
