@@ -39,8 +39,8 @@ public class UDPSendServer implements Runnable {
 
     public void run() {
         DatagramSocket sendSocket;
-        Log.d("CommandServer","Starting UDP send server with IP destination: " + destinationIP +
-                " and port: " + Integer.toString(destinationPort));
+        //Log.d("CommandServer","Starting UDP send server with IP destination: " + destinationIP +
+        //        " and port: " + Integer.toString(destinationPort));
         try {
             sendSocket = new DatagramSocket();
             while(!Thread.currentThread().isInterrupted()) {
@@ -49,12 +49,12 @@ public class UDPSendServer implements Runnable {
                     sendCommandPacket(sendSocket, stringOut);
                 }
                 catch (UnknownHostException e) {
-                    Log.d("CommandServer","Invalid destination IP");
-                    e.printStackTrace();
+                    //Log.d("CommandServer","Invalid destination IP");
+                    //e.printStackTrace();
                 }
                 catch (IOException e) {
-                    Log.d("CommandServer","Error sending packet");
-                    e.printStackTrace();
+                    //Log.d("CommandServer","Error sending packet");
+                    //e.printStackTrace();
                 }
                 try {
                     Thread.sleep(1000 / updateRate);
@@ -63,12 +63,12 @@ public class UDPSendServer implements Runnable {
                     Thread.currentThread().interrupt();
                 }
             }
-            Log.d("CommandServer","Shutting down UDP send server...");
+            //Log.d("CommandServer","Shutting down UDP send server...");
             sendSocket.close();
         }
         catch (Exception e) {
-            Log.d("CommandServer","Error binding send socket");
-            e.printStackTrace();
+            //Log.d("CommandServer","Error binding send socket");
+            //e.printStackTrace();
         }
     }
 

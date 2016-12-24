@@ -23,8 +23,7 @@ public class UDPReceiveServer implements Runnable {
 
     public void run() {
         DatagramSocket receiveSocket;
-        Log.d("CommandServer","Starting UDP receive server with port: " +
-                Integer.toString(receivePort));
+        //Log.d("CommandServer","Starting UDP receive server with port: " +Integer.toString(receivePort));
         try {
             receiveSocket = new DatagramSocket(receivePort);
             receiveSocket.setSoTimeout(SOCKET_TIMEOUT);
@@ -43,11 +42,11 @@ public class UDPReceiveServer implements Runnable {
                     Thread.currentThread().interrupt();
                 }
             }
-            Log.d("CommandServer","Shutting down receive server...");
+            //Log.d("CommandServer","Shutting down receive server...");
             receiveSocket.close();
         }
         catch (Exception e) {
-            Log.d("CommandServer","Error binding receive socket");
+            //Log.d("CommandServer","Error binding receive socket");
             e.printStackTrace();
         }
     }
